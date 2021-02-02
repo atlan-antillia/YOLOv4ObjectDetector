@@ -1,7 +1,3 @@
-# YOLOv4ObjectDetector
-Python YOLOv4ObjectDetector based on darknet/YOLOv4
-
-
 
 <h1> YOLOv4ObjectDetector</h1>
 YOLOv4ObjectDetector is simple Python class to detect objects in an image by using
