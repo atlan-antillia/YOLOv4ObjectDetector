@@ -39,7 +39,7 @@ or <a href="https://drive.google.com/open?id=1cewMfusmPjYWbrnuJRuKhPMwRe_b9PaT">
 <h3>
 1.3 Deploy YOLOv4ObjectDetector to darknet
 </h3>
-Please copy files and folders in YOLOv4ObjectDetector to darknet or darknet/build/darknet/build/x64 (Windows10)
+Please copy files and folders in YOLOv4ObjectDetector to darknet or darknet/build/darknet/x64 (Windows10).
 
 
 
@@ -47,7 +47,7 @@ Please copy files and folders in YOLOv4ObjectDetector to darknet or darknet/buil
 2 Run YOLOv4ObjectDetector
 </h2>
 
-In darknet folder or or darknet/build/darknet/build/x64, run the following command.<br>
+In darknet folder or darknet/build/darknet/x64, run the following command.<br>
 
 >python YOLOv4ObjectDetector.py image_file_dir coco_detect.config [filters]<br>
 ,where filters is an optional parameter,and specify a list of classe to be selected something like [car,person]
@@ -200,7 +200,7 @@ Please download weight file(yolov4-tiny.weights) from <a href="https://github.co
 and copy it to ./dataset/coco/weights/ folder.
 <br>
 
-In darknet folder or or darknet/build/darknet/build/x64, run the following command.<br>
+In darknet folder or darknet/build/darknet/x64, run the following command.<br>
 
 >python YOLOv4ObjectDetector.py image_file_dir coco_detect_tiny.config [filters]<br>
 ,where filters is an optional parameter,and specify a list of classe to be selected something like [car,person]
