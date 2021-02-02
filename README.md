@@ -235,7 +235,7 @@ Example 1<br>
 <br>
 The YOLOv4 tiny-model is much faster than the standard model.
 However, in this case, you can see a lot of detection failures. 
-
+<br>
 <br>
 img.png.objects.csv<br>
 <pre>
