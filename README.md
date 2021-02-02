@@ -61,7 +61,7 @@ coco_detect.config<br>
 [model]
 dataset = coco
 #weights = ./dataset/coco/weights/yolov4-tiny.weights
-#config  = ./dataset/coco/yolov4-tiny.cfg
+#config  = ./dataset/coco/cfg/yolov4-tiny.cfg
 
 weights = ./dataset/coco/weights/yolov4.weights
 config  = ./dataset/coco/cfg/yolov4.cfg
@@ -173,9 +173,9 @@ id, class, count
 3 Some object detection examples
 </h2>
 Example 1<br>
-<pre>
+
 >python YOLOv4ObjectDetector.py ./images/ShinJuku.png coco_detect.config
-</pre>
+<br>
 
 <img src="./dataset/coco/outputs/ShinJuku.jpg" >
 <br>
@@ -191,3 +191,86 @@ Example 3<br>
 <br>
 <img src="./dataset/coco/outputs/Takashimaya2.jpg">
 <br><br>
+
+
+<h2>
+4 YOLOv4 tiny model
+</h2>
+Please download weight file(yolov4-tiny.weights) from <a href="https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v4_pre/yolov4-tiny.weights">here</a>
+and copy it to ./dataset/coco/weights/ folder.
+<br>
+
+In darknet folder or or darknet/build/darknet/build/x64, run the following command.<br>
+
+>python YOLOv4ObjectDetector.py image_file_dir coco_detect_tiny.config [filters]<br>
+,where filters is an optional parameter,and specify a list of classe to be selected something like [car,person]
+
+<br>
+
+<br>
+coco_detect_tiny.config<br>
+<pre>
+;coco_detect.config
+[model]
+dataset = coco
+weights = ./dataset/coco/weights/yolov4-tiny.weights
+config  = ./dataset/coco/cfg/yolov4-tiny.cfg
+
+#weights = ./dataset/coco/weights/yolov4.weights
+#config  = ./dataset/coco/cfg/yolov4.cfg
+data    = ./dataset/coco/data/coco.data
+
+[detection]
+outputs   = ./dataset/coco/outputs_tiny
+threshold=0.4
+save_labels= True
+</pre>
+
+Example 1<br>
+
+>python YOLOv4ObjectDetector.py ./images/img.png coco_detect_tiny.config
+<br>
+
+<img src="./dataset/coco/outputs_tiny/img.png" >
+<br>
+The YOLOv4 tiny-model is much faster than the standard model.
+However, in this case, you can see a lot of detection failures. 
+
+<br>
+img.png.objects.csv<br>
+<pre>
+id, class, score, x, y, w, h
+0, car, 0.98, 1566, 641, 329, 271
+1, car, 0.96, 1246, 897, 392, 174
+2, car, 0.93, 466, 871, 327, 206
+3, car, 0.86, 1307, 610, 328, 296
+4, car, 0.85, 1354, 513, 180, 120
+5, motorbike, 0.84, 1086, 710, 71, 117
+6, car, 0.78, 1024, 380, 87, 87
+7, person, 0.75, 1244, 682, 63, 99
+8, car, 0.73, 1179, 369, 98, 80
+9, motorbike, 0.68, 6, 867, 189, 191
+10, motorbike, 0.66, 655, 620, 66, 126
+11, person, 0.65, 1087, 667, 67, 122
+12, car, 0.65, 209, 629, 277, 203
+13, car, 0.64, 1181, 489, 135, 118
+14, truck, 0.57, 207, 622, 265, 220
+15, motorbike, 0.55, 1243, 751, 78, 96
+16, motorbike, 0.51, 1123, 560, 57, 111
+17, person, 0.43, 500, 626, 71, 115
+18, motorbike, 0.40, 316, 944, 150, 133
+19, bus, 0.40, 579, 351, 159, 155
+</pre>
+
+<br>
+img.png.stats.csv<br>
+<pre>
+id, class, count
+1,car,9
+2,motorbike,6
+3,person,3
+4,truck,1
+5,bus,1
+
+</pre>
+
