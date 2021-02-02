@@ -80,7 +80,7 @@ in the detecton/outputs folder specfied in coco_detec.config file.
 Example 1:<br>
 
 >python YOLOv4ObjectDetector.py images/img.png coco_detect.config
-
+<br>
 <img src="./dataset/coco/outputs/img.png">
 <br>
 
@@ -167,3 +167,27 @@ id, class, count
 5,truck,1
 
 </pre>
+
+
+<h2>
+3 Some object detection examples
+</h2>
+Example 1<br>
+<pre>
+>python YOLOv4ObjectDetector.py ./images/ShinJuku.png coco_detect.config
+</pre>
+
+<img src="./dataset/coco/outputs/ShinJuku.jpg" >
+<br>
+Example 2<br>
+
+>python YOLOv4ObjectDetector.py ./images/ShinJuku2.png coco_detect.config
+<br>
+<img src="./dataset/coco/outputs/ShinJuku2.jpg" >
+<br>
+Example 3<br>
+
+>python YOLOv4ObjectDetector.py ./images/Takashimaya2.png coco_detect.config
+<br>
+<img src="./dataset/coco/outputs/Takashimaya2.jpg">
+<br><br>
